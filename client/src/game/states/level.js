@@ -245,7 +245,12 @@ Level.prototype = {
     // TODO: do not allow the game to start until this operation is complete.
     var blockLayerData = game.cache.getTilemapData(this.tilemapName).data.layers[1];
 
-    socket.emit("register map", {tiles: blockLayerData.data, height: blockLayerData.height, width: blockLayerData.width, destructibleTileId: mapInfo.destructibleTileId});
+    socket.emit("register map", {
+        tiles: blockLayerData.data,
+        height: blockLayerData.height,
+        width: blockLayerData.width,
+        destructibleTileId: mapInfo.destructibleTileId
+    });
   },
 
   onMovePlayer: function(data) {
